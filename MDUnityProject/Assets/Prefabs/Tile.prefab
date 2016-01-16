@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21258308}
   - 114: {fileID: 11488306}
   - 61: {fileID: 6134948}
+  - 114: {fileID: 11444518}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Solid
@@ -44,6 +45,21 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
+--- !u!114 &11444518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80b25c80346d4192a9bed4209429e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleSpawnList:
+  - {fileID: 102474, guid: de7ff0fc3867740199e47b238a93a068, type: 2}
+  spawnChancePercentage:
+  - 10
 --- !u!114 &11488306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c5d0630948b4774b1015a98a46d355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amITheStartTile: 0
   mainChara: {fileID: 153788, guid: ef453a351c73e4d6b9030e8f91a74ba8, type: 2}
   tileIdentifier: 0
   winTileSprite: {fileID: 21302000, guid: a3d66b14dd14d479b938b285341dd1d6, type: 3}
@@ -97,6 +114,14 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: possibleSpawnList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawnChancePercentage.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: -5
       objectReference: {fileID: 0}
@@ -112,6 +137,22 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawnChancePercentage.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: possibleSpawnList.Array.data[0]
+      value: 
+      objectReference: {fileID: 102474, guid: de7ff0fc3867740199e47b238a93a068, type: 2}
+    - target: {fileID: 0}
+      propertyPath: spawnChancePercentage.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: possibleSpawnList.Array.data[1]
+      value: 
+      objectReference: {fileID: 162986, guid: a045fb160328b49ba8b7133ba2de6033, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176456}

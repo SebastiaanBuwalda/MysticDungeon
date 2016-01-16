@@ -3,6 +3,8 @@ using System.Collections;
 
 public class OpenPathGenerator : MonoBehaviour {
 
+	public bool amITheStartTile = false;
+
 	private bool spawnedPlayer;
 
 	[SerializeField]
@@ -48,6 +50,7 @@ public class OpenPathGenerator : MonoBehaviour {
 		tileCount++;
 
 		if (tileIdentifier == DungeonGenerator.startTile) {
+			amITheStartTile = true;
 			nextPath = DungeonGenerator.startTile;
 			startPositionFound = true;
 		}
