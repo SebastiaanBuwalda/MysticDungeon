@@ -9,6 +9,7 @@ public class SplashScrceen : MonoBehaviour {
 		playerObject = GameObject.FindGameObjectWithTag ("Player");
 		if (playerObject != null) 
 		{
+			Debug.Log ("!!!!!");
 			gameObject.SetActive(false);
 		}
 	}

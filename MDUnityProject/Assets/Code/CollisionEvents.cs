@@ -12,10 +12,14 @@ public class CollisionEvents : MonoBehaviour {
 
 	private FadeAfterTime dialogueBoxFader;
 
+	private PlayerStatistics playerStats;
+
 	// Use this for initialization
 	void Start () {
 		dialogueBox.SetActive (false);
 		dialogueBoxFader = dialogueBox.GetComponent<FadeAfterTime> ();
+		playerStats = GetComponent<PlayerStatistics> ();
+		Debug.Log (playerStats);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -26,8 +30,10 @@ public class CollisionEvents : MonoBehaviour {
 			float moneyRecieved = otherChestValue.myMoneyValue;
 			dialogueBox.SetActive (true);
 			dialogueText.text = "The treasure chest contains "+moneyRecieved+" gold.";
+			playerStats.playerWallet = playerStats.playerWallet + moneyRecieved;
 			dialogueBoxFader.timeUntilFade = 2;
 			Destroy (other.gameObject);
+			Debug.Log (playerStats.playerWallet);
 		}
 	}
 }
