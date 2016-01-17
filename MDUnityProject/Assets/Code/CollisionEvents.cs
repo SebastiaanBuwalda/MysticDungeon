@@ -19,7 +19,6 @@ public class CollisionEvents : MonoBehaviour {
 		dialogueBox.SetActive (false);
 		dialogueBoxFader = dialogueBox.GetComponent<FadeAfterTime> ();
 		playerStats = GetComponent<PlayerStatistics> ();
-		Debug.Log (playerStats);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -30,10 +29,15 @@ public class CollisionEvents : MonoBehaviour {
 			float moneyRecieved = otherChestValue.myMoneyValue;
 			dialogueBox.SetActive (true);
 			dialogueText.text = "The treasure chest contains "+moneyRecieved+" gold.";
-			playerStats.playerWallet = playerStats.playerWallet + moneyRecieved;
+			PlayerStatistics.playerWallet = PlayerStatistics.playerWallet + moneyRecieved;
+            playerStats.UIUpdate();
 			dialogueBoxFader.timeUntilFade = 2;
 			Destroy (other.gameObject);
-			Debug.Log (playerStats.playerWallet);
 		}
-	}
+
+        if (other.tag == "Win")
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
+    }
 }

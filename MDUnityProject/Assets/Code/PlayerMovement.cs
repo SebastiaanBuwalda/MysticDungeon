@@ -49,13 +49,4 @@ public class PlayerMovement : MonoBehaviour {
 			positionToGoTo = this.transform.position;
 		}
 	}
-
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if (other.tag == "Win") 
-		{
-			Debug.Log ("NEXT FLOOR");
-			Application.LoadLevel(Application.loadedLevel);
-		}
-	}
 }

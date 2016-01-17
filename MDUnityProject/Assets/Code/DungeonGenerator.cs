@@ -42,7 +42,11 @@ public class DungeonGenerator : MonoBehaviour {
 		xTileModifier = xGridSize;
 		yTileModifier = yGridSize;
 		numberOfTiles = xGridSize * yGridSize;
-		
+        OpenPathGenerator.startPositionFound = false;
+        OpenPathGenerator.winPositionFound = false;
+        OpenPathGenerator.tileCount = 0;
+        OpenPathGenerator.dungeonFinished = false;
+
 		recallTiles ();
 
 
